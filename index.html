@@ -1,0 +1,1081 @@
+!DOCTYPE html
+html lang=en
+head
+meta charset=UTF-8
+meta name=viewport content=width=device-width, initial-scale=1.0
+titleClearSignals AI™ — Your Communications Already Know The Truthtitle
+link rel=preconnect href=httpsfonts.googleapis.com
+link rel=preconnect href=httpsfonts.gstatic.com crossorigin
+link href=httpsfonts.googleapis.comcss2family=DM+Serif+Displayital@0;1&family=DM+Sanswght@300;400;500;600&family=JetBrains+Monowght@400;500&display=swap rel=stylesheet
+link rel=stylesheet href=httpscdnjs.cloudflare.comajaxlibsfont-awesome6.5.0cssall.min.css
+style
+  root {
+    --navy    #0B1929;
+    --navy2   #112336;
+    --blue    #1B4F8A;
+    --sky     #2E8BC0;
+    --teal    #0D7377;
+    --gold    #C9A84C;
+    --gold2   #F0CC6E;
+    --red     #C0392B;
+    --yellow  #E8A020;
+    --green   #1A7A4A;
+    --white   #F5F7FA;
+    --gray    #8A9BAD;
+    --border  rgba(255,255,255,0.08);
+    --card    rgba(255,255,255,0.04);
+    --card2   rgba(255,255,255,0.07);
+  }
+  , before, after { box-sizing border-box; margin 0; padding 0; }
+  html { scroll-behavior smooth; }
+  body {
+    font-family 'DM Sans', sans-serif;
+    background var(--navy);
+    color var(--white);
+    line-height 1.7;
+    overflow-x hidden;
+  }
+
+   ── TYPOGRAPHY ── 
+  h1,h2,h3,h4 { font-family 'DM Serif Display', serif; }
+  .mono { font-family 'JetBrains Mono', monospace; }
+
+   ── NAV ── 
+  nav {
+    position fixed; top 0; left 0; right 0; z-index 100;
+    background rgba(11,25,41,0.92);
+    backdrop-filter blur(12px);
+    border-bottom 1px solid var(--border);
+    padding 0 2rem;
+    display flex; align-items center; justify-content space-between;
+    height 64px;
+  }
+  .nav-brand {
+    font-family 'DM Serif Display', serif;
+    font-size 1.25rem;
+    color var(--gold2);
+    letter-spacing 0.02em;
+  }
+  .nav-brand span { color var(--white); }
+  .nav-links { display flex; gap 2rem; list-style none; }
+  .nav-links a {
+    font-size 0.8rem; font-weight 500; letter-spacing 0.08em;
+    text-transform uppercase; color var(--gray);
+    text-decoration none; transition color .2s;
+  }
+  .nav-links ahover { color var(--gold2); }
+
+   ── SECTIONS ── 
+  section { padding 7rem 2rem; }
+  .container { max-width 1100px; margin 0 auto; }
+  .container-wide { max-width 1300px; margin 0 auto; }
+
+   ── HERO ── 
+  #hero {
+    min-height 100vh;
+    display flex; align-items center;
+    background
+      radial-gradient(ellipse 80% 60% at 20% 40%, rgba(27,79,138,0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 70%, rgba(13,115,119,0.2) 0%, transparent 55%),
+      var(--navy);
+    padding-top 6rem;
+  }
+  .hero-eyebrow {
+    font-size 0.75rem; font-weight 600; letter-spacing 0.18em;
+    text-transform uppercase; color var(--gold);
+    margin-bottom 1.5rem;
+  }
+  .hero-title {
+    font-size clamp(2.8rem, 6vw, 5rem);
+    line-height 1.1;
+    margin-bottom 1.5rem;
+    color #fff;
+  }
+  .hero-title em { font-style italic; color var(--gold2); }
+  .hero-sub {
+    font-size 1.15rem; color var(--gray);
+    max-width 560px; margin-bottom 2.5rem; line-height 1.8;
+  }
+  .hero-stats {
+    display flex; gap 3rem; margin-top 3rem;
+    padding-top 3rem;
+    border-top 1px solid var(--border);
+  }
+  .hero-stat-num {
+    font-family 'DM Serif Display', serif;
+    font-size 2.4rem; color var(--gold2);
+  }
+  .hero-stat-label { font-size 0.8rem; color var(--gray); text-transform uppercase; letter-spacing 0.1em; }
+
+   ── BUTTONS ── 
+  .btn {
+    display inline-block; padding 0.85rem 2rem;
+    font-size 0.85rem; font-weight 600; letter-spacing 0.06em;
+    text-transform uppercase; text-decoration none;
+    border-radius 4px; transition all .2s; cursor pointer;
+  }
+  .btn-gold { background var(--gold); color var(--navy); }
+  .btn-goldhover { background var(--gold2); transform translateY(-1px); }
+  .btn-outline { border 1px solid var(--border); color var(--white); margin-left 1rem; }
+  .btn-outlinehover { border-color var(--gold); color var(--gold2); }
+
+   ── SECTION HEADERS ── 
+  .section-tag {
+    font-size 0.7rem; font-weight 600; letter-spacing 0.2em;
+    text-transform uppercase; color var(--teal);
+    margin-bottom 0.75rem;
+  }
+  .section-title {
+    font-size clamp(1.8rem, 3.5vw, 2.8rem);
+    margin-bottom 1rem; line-height 1.2;
+  }
+  .section-sub { color var(--gray); max-width 600px; font-size 1.05rem; line-height 1.8; }
+
+   ── CARDS ── 
+  .card {
+    background var(--card);
+    border 1px solid var(--border);
+    border-radius 10px; padding 2rem;
+    transition border-color .2s, background .2s;
+  }
+  .cardhover { border-color rgba(201,168,76,0.3); background var(--card2); }
+  .card-icon {
+    width 48px; height 48px; border-radius 10px;
+    display flex; align-items center; justify-content center;
+    font-size 1.2rem; margin-bottom 1.25rem;
+  }
+  .icon-blue  { background rgba(27,79,138,0.25); color var(--sky); }
+  .icon-teal  { background rgba(13,115,119,0.25); color #4ECDC4; }
+  .icon-gold  { background rgba(201,168,76,0.2); color var(--gold2); }
+  .icon-red   { background rgba(192,57,43,0.2); color #E74C3C; }
+  .icon-green { background rgba(26,122,74,0.2); color #2ECC71; }
+  .icon-purp  { background rgba(91,45,142,0.2); color #A06EE3; }
+  .card h3 { font-size 1.15rem; margin-bottom 0.75rem; }
+  .card p  { font-size 0.9rem; color var(--gray); line-height 1.7; }
+
+   ── GRID ── 
+  .grid-3 { display grid; grid-template-columns repeat(3,1fr); gap 1.5rem; }
+  .grid-2 { display grid; grid-template-columns repeat(2,1fr); gap 1.5rem; }
+  .grid-4 { display grid; grid-template-columns repeat(4,1fr); gap 1.25rem; }
+  @media(max-width900px){ .grid-3,.grid-4 { grid-template-columns1fr 1fr; } }
+  @media(max-width600px){ .grid-3,.grid-4,.grid-2 { grid-template-columns1fr; } }
+
+   ── PROBLEM SECTION ── 
+  #problem { background var(--navy2); }
+  .stat-block {
+    padding 2rem;
+    border-left 3px solid var(--gold);
+    background var(--card);
+    border-radius 0 8px 8px 0;
+  }
+  .stat-block .num {
+    font-family 'DM Serif Display', serif;
+    font-size 2.8rem; color var(--gold2);
+  }
+  .stat-block .label { font-size 0.85rem; color var(--gray); }
+  .stat-block .desc { margin-top 0.5rem; font-size 0.9rem; }
+
+   ── RYG SCORE ── 
+  .ryg-demo {
+    background var(--card);
+    border 1px solid var(--border);
+    border-radius 12px; padding 2rem;
+    font-family 'JetBrains Mono', monospace;
+  }
+  .ryg-bar { display flex; gap 0.5rem; margin 1rem 0; align-items center; }
+  .ryg-pill {
+    padding 0.3rem 0.9rem; border-radius 20px;
+    font-size 0.75rem; font-weight 700; letter-spacing 0.1em;
+  }
+  .ryg-red    { background rgba(192,57,43,0.25); color #E74C3C; border 1px solid rgba(192,57,43,0.4); }
+  .ryg-yellow { background rgba(232,160,32,0.25); color #F39C12; border 1px solid rgba(232,160,32,0.4); }
+  .ryg-green  { background rgba(26,122,74,0.25); color #2ECC71; border 1px solid rgba(26,122,74,0.4); }
+  .ryg-info   { background rgba(46,139,192,0.2); color var(--sky); border 1px solid rgba(46,139,192,0.3); }
+  .ryg-label  { font-size 0.78rem; color var(--gray); }
+  .ryg-rule {
+    background rgba(255,255,255,0.04);
+    border-left 3px solid var(--yellow);
+    border-radius 0 6px 6px 0;
+    padding 0.75rem 1rem; margin 0.5rem 0;
+    font-size 0.78rem;
+  }
+  .ryg-rule.red-rule { border-left-color var(--red); }
+  .ryg-rule.green-rule { border-left-color var(--green); }
+  .ryg-coaching {
+    background rgba(13,115,119,0.12);
+    border 1px solid rgba(13,115,119,0.3);
+    border-radius 6px; padding 0.75rem 1rem;
+    font-size 0.78rem; color #4ECDC4; margin-top 0.5rem;
+  }
+
+   ── TRUECULTURE SECTION ── 
+  #trueculture {
+    background
+      radial-gradient(ellipse 70% 50% at 90% 50%, rgba(13,115,119,0.15) 0%, transparent 60%),
+      var(--navy2);
+  }
+  .tc-api-grid { display grid; grid-template-columns 1fr 1fr; gap 2px; margin-top 2rem; }
+  .tc-api-col {
+    padding 2rem;
+    border 1px solid var(--border);
+  }
+  .tc-api-colfirst-child { border-radius 10px 0 0 10px; background rgba(27,79,138,0.12); border-right none; }
+  .tc-api-collast-child  { border-radius 0 10px 10px 0; background rgba(91,45,142,0.10); }
+  .tc-api-header {
+    font-family 'JetBrains Mono', monospace;
+    font-size 0.75rem; font-weight 500;
+    letter-spacing 0.12em; text-transform uppercase;
+    margin-bottom 1rem; padding-bottom 0.75rem;
+    border-bottom 1px solid var(--border);
+  }
+  .pro-color  { color var(--sky); }
+  .pers-color { color #A06EE3; }
+  .tc-dim { margin-bottom 1rem; }
+  .tc-dim-name { font-size 0.75rem; color var(--gold); font-weight 600; text-transform uppercase; letter-spacing 0.1em; margin-bottom 0.3rem; }
+  .tc-dim-text { font-size 0.85rem; color var(--gray); line-height 1.6; }
+
+   ── ARCHITECTURE ── 
+  .arch-block {
+    background rgba(11,25,41,0.8);
+    border 1px solid var(--border);
+    border-radius 10px; padding 1.5rem;
+    font-family 'JetBrains Mono', monospace;
+    font-size 0.78rem; color #8FBCBB;
+    white-space pre;
+    overflow-x auto;
+  }
+
+   ── COMPETITIVE ── 
+  .comp-table { width 100%; border-collapse collapse; }
+  .comp-table th {
+    background rgba(27,79,138,0.3);
+    padding 0.9rem 1rem; text-align left;
+    font-size 0.75rem; letter-spacing 0.1em; text-transform uppercase;
+    color var(--gray); font-weight 500;
+    border-bottom 1px solid var(--border);
+  }
+  .comp-table td {
+    padding 0.85rem 1rem; border-bottom 1px solid rgba(255,255,255,0.04);
+    font-size 0.88rem;
+  }
+  .comp-table trhover td { background var(--card); }
+  .comp-table .highlight td { background rgba(13,115,119,0.1); }
+  .check { color #2ECC71; } .cross { color #E74C3C; } .partial { color #F39C12; }
+
+   ── FINANCIALS ── 
+  #financials { background var(--navy2); }
+  .fin-card {
+    background var(--card); border 1px solid var(--border);
+    border-radius 10px; padding 1.75rem;
+    text-align center;
+  }
+  .fin-card .big {
+    font-family 'DM Serif Display', serif;
+    font-size 2.2rem; color var(--gold2);
+  }
+  .fin-card .yr { font-size 0.75rem; color var(--gray); text-transform uppercase; letter-spacing 0.1em; margin-bottom 0.5rem; }
+  .fin-card .note { font-size 0.8rem; color var(--gray); margin-top 0.5rem; }
+  .use-bar {
+    display flex; align-items center; gap 1rem; margin-bottom 0.75rem;
+  }
+  .use-bar-label { width 200px; font-size 0.85rem; color var(--gray); flex-shrink 0; }
+  .use-bar-track { flex 1; height 8px; background rgba(255,255,255,0.08); border-radius 4px; }
+  .use-bar-fill  { height 100%; border-radius 4px; background linear-gradient(90deg, var(--blue), var(--sky)); }
+  .use-bar-val   { width 50px; font-size 0.85rem; color var(--white); text-align right; }
+
+   ── MOAT ── 
+  .moat-item {
+    padding 1.5rem; border-left 3px solid var(--teal);
+    background var(--card); border-radius 0 8px 8px 0;
+    margin-bottom 1rem;
+  }
+  .moat-item h4 { font-family 'DM Serif Display', serif; font-size 1.05rem; margin-bottom 0.5rem; }
+  .moat-item p  { font-size 0.88rem; color var(--gray); line-height 1.7; }
+
+   ── QUOTE ── 
+  .pull-quote {
+    border-left 4px solid var(--gold);
+    padding 1.5rem 2rem;
+    background var(--card);
+    border-radius 0 10px 10px 0;
+    font-family 'DM Serif Display', serif;
+    font-size 1.15rem; font-style italic;
+    line-height 1.6;
+    margin 2rem 0;
+  }
+  .pull-quote cite { display block; font-family 'DM Sans', sans-serif; font-style normal; font-size 0.8rem; color var(--gray); margin-top 0.75rem; }
+
+   ── ROADMAP ── 
+  .roadmap-item { display flex; gap 1.5rem; margin-bottom 2rem; }
+  .roadmap-dot  { flex-shrink 0; width 14px; height 14px; border-radius 50%; margin-top 0.4rem; background var(--teal); box-shadow 0 0 0 4px rgba(13,115,119,0.2); }
+  .roadmap-item h4 { font-family 'DM Serif Display', serif; font-size 1rem; margin-bottom 0.3rem; }
+  .roadmap-item p  { font-size 0.85rem; color var(--gray); }
+  .roadmap-phase { font-size 0.72rem; color var(--teal); text-transform uppercase; letter-spacing 0.1em; font-weight 600; }
+
+   ── INVESTMENT ── 
+  #investment {
+    background radial-gradient(ellipse 80% 60% at 50% 50%, rgba(27,79,138,0.25) 0%, transparent 70%), var(--navy);
+  }
+  .ask-box {
+    background linear-gradient(135deg, rgba(27,79,138,0.3), rgba(13,115,119,0.2));
+    border 1px solid rgba(201,168,76,0.3);
+    border-radius 14px; padding 3rem;
+    text-align center;
+  }
+  .ask-amount {
+    font-family 'DM Serif Display', serif;
+    font-size 4rem; color var(--gold2); margin 1rem 0;
+  }
+
+   ── TEAM ── 
+  .team-card {
+    background var(--card); border 1px solid var(--border);
+    border-radius 10px; padding 1.75rem;
+  }
+  .team-card h3 { font-size 1.05rem; margin-bottom 0.25rem; }
+  .team-card .role { font-size 0.78rem; color var(--teal); text-transform uppercase; letter-spacing 0.1em; margin-bottom 0.75rem; font-weight 600; }
+  .team-card p  { font-size 0.87rem; color var(--gray); line-height 1.7; }
+
+   ── FOOTER ── 
+  footer {
+    background rgba(0,0,0,0.4);
+    border-top 1px solid var(--border);
+    padding 3rem 2rem;
+    text-align center;
+  }
+  footer .brand { font-family 'DM Serif Display', serif; font-size 1.5rem; color var(--gold2); margin-bottom 0.5rem; }
+  footer p { font-size 0.85rem; color var(--gray); }
+  footer a { color var(--sky); text-decoration none; }
+
+   ── DIVIDER ── 
+  .divider { width 60px; height 3px; background var(--gold); margin 1.5rem 0; border-radius 2px; }
+
+   ── FADE-IN ── 
+  .fade { opacity 0; transform translateY(24px); transition opacity .6s ease, transform .6s ease; }
+  .fade.visible { opacity 1; transform translateY(0); }
+
+   ── BADGE ── 
+  .badge {
+    display inline-block; padding 0.25rem 0.75rem; border-radius 20px;
+    font-size 0.7rem; font-weight 600; letter-spacing 0.08em;
+    text-transform uppercase;
+  }
+  .badge-teal { background rgba(13,115,119,0.2); color #4ECDC4; border 1px solid rgba(13,115,119,0.3); }
+  .badge-gold { background rgba(201,168,76,0.15); color var(--gold2); border 1px solid rgba(201,168,76,0.25); }
+  .badge-blue { background rgba(27,79,138,0.3); color var(--sky); border 1px solid rgba(46,139,192,0.3); }
+
+   ── HIGHLIGHT BOX ── 
+  .hl-box {
+    padding 1.5rem 2rem;
+    border-radius 10px;
+    margin 1.5rem 0;
+  }
+  .hl-teal { background rgba(13,115,119,0.1); border 1px solid rgba(13,115,119,0.25); }
+  .hl-gold  { background rgba(201,168,76,0.08); border 1px solid rgba(201,168,76,0.2); }
+  .hl-blue  { background rgba(27,79,138,0.15); border 1px solid rgba(46,139,192,0.2); }
+style
+head
+body
+
+!-- NAV --
+nav
+  div class=nav-brandClearspanSignalsspan AIdiv
+  ul class=nav-links
+    lia href=#problemProblemali
+    lia href=#solutionSolutionali
+    lia href=#truecultureTrueCultureali
+    lia href=#architectureArchitectureali
+    lia href=#competitiveCompetitiveali
+    lia href=#ipIPali
+    lia href=#financialsFinancialsali
+    lia href=#investmentInvestali
+  ul
+nav
+
+!-- HERO --
+section id=hero
+  div class=container
+    div class=fade
+      p class=hero-eyebrowInvestor Presentation · Seed Round · Confidentialp
+      h1 class=hero-title
+        emYour Communicationsembr
+        Already Knowbr
+        The Truth
+      h1
+      p class=hero-sub
+        The first communication intelligence platform that transforms your actual email history, call transcripts, and text messages into a living profile — writing AI content with your authentic personality, reading the health of every relationship, and flagging what buyers really mean before the deal slips away.
+      p
+      div
+        a href=#investment class=btn btn-goldView Investment Opportunitya
+        a href=#solution class=btn btn-outlineSee the Platforma
+      div
+      div class=hero-stats
+        div
+          div class=hero-stat-num50%div
+          div class=hero-stat-labelof written communication is misunderstood by the recipient span style=font-size0.65rem;displayblock;margin-top0.25rem;opacity0.55;text-transformnone;letter-spacing0Nick Morgan · Can You Hear Mespandiv
+        div
+        div
+          div class=hero-stat-num70%div
+          div class=hero-stat-labelof international ventures fail due to cultural differences span style=font-size0.65rem;displayblock;margin-top0.25rem;opacity0.55;text-transformnone;letter-spacing0Harvard Business Reviewspandiv
+        div
+        div
+          div class=hero-stat-num49%div
+          div class=hero-stat-labelhigher close rate when competitors are identified early span style=font-size0.65rem;displayblock;margin-top0.25rem;opacity0.55;text-transformnone;letter-spacing0Gong Labsspandiv
+        div
+      div
+    div
+  div
+section
+
+!-- PROBLEM --
+section id=problem
+  div class=container fade
+    p class=section-tagThe Problemp
+    h2 class=section-titleThree Revenue Leaks.brOne Root Cause.h2
+    p class=section-subBuyers rarely say exactly what they mean. They soften refusals, rely on cultural norms, and drop competitor names without inviting comparison. Every rep misses these signals. Every missed signal costs revenue.p
+    div class=dividerdiv
+    div class=grid-3 style=margin-top3rem
+      div class=stat-block fade
+        div class=num48%div
+        div class=labelMisread Intentdiv
+        div class=desc48% of salespeople never make a second follow-up after an initial contact — often because they misread polite engagement as disinterest. 80% of deals require 5–12 touches to close. The signal was there. They just couldn't see it. em style=font-size0.78rem;colorvar(--gray)(Invesp)emdiv
+      div
+      div class=stat-block fade
+        div class=num17%div
+        div class=labelCultural Misunderstandingdiv
+        div class=descOnly 17% of cross-border M&As meet their performance expectations — and over a third of executives who failed blamed cultural differences directly. In Japan, we will consider it is a polite no. In Vietnam, silence is deliberation. No current tool decodes this. em style=font-size0.78rem;colorvar(--gray)(KPMG)emdiv
+      div
+      div class=stat-block fade
+        div class=num32%div
+        div class=labelInvisible Competitiondiv
+        div class=descEarly competitor mentions increase enterprise deal close rates by 32%. But most reps never catch the signal — competitor names buried in email threads, dropped mid-call, never entered into CRM. By the time it surfaces, the deal is already tilting the wrong way. em style=font-size0.78rem;colorvar(--gray)(Gong Labs)emdiv
+      div
+    div
+    div class=pull-quote style=margin-top3rem
+      Our Japanese subsidiary was convinced we were pushy Americans. ClearSignals didn't just translate — it told us exactly when to push, when to pause, and when to counter a competitor we didn't even know was in the deal.
+      cite— VP Sales, Pilot Client ($200M B2B SaaS)cite
+    div
+  div
+section
+
+!-- SOLUTION --
+section id=solution
+  div class=container fade
+    p class=section-tagThe Platformp
+    h2 class=section-titleThree Capabilities.brOne Unified Co-Pilot.h2
+    p class=section-subClearSignals AI™ analyzes email threads, call transcripts, video calls, and text messages to surface what's actually being communicated — not just what was said.p
+    div class=dividerdiv
+    div class=grid-3 style=margin-top3rem
+      div class=card fade
+        div class=card-icon icon-bluei class=fas fa-brainidiv
+        h3Intent Decoderh3
+        pAnalyzes speech patterns, word choice, hesitations, and question framing across every channel — email, call transcript, video, text. Classifies buyer readiness on a 1-10 scale and flags mismatches between stated interest and true intent.p
+        div style=margin-top1rem
+          div class=ryg-demo
+            div style=font-size0.7rem;colorvar(--gray);margin-bottom0.75remINTENT SIGNAL DETECTEDdiv
+            div class=ryg-ruleWe would have needed this last quarter — past tense signals budget death. Verify timeline before next step.div
+            div class=ryg-rule red-ruleReadiness score dropped from 7 → 4 over last 3 emails. Relationship cooling.div
+          div
+        div
+      div
+      div class=card fade
+        div class=card-icon icon-teali class=fas fa-globeidiv
+        h3Cultural Signal Libraryh3
+        pPowered by strong style=color#4ECDC4TrueCulture AIstrong — a proprietary cultural intelligence platform covering 50+ countries across professional communication, negotiation, trust architecture, and behavioral norms. Real-time RedYellowGreen email scoring plus live video call coaching.p
+        div style=margin-top1rem
+          div class=ryg-demo
+            div style=font-size0.7rem;colorvar(--gray);margin-bottom0.75remJAPAN · EMAIL SCOREdiv
+            div class=ryg-bar
+              span class=ryg-pill ryg-yellowYELLOWspan
+              span class=ryg-labelContent score · 2 issuesspan
+            div
+            div class=ryg-ruleOpens with direct request before relationship contextdiv
+            div class=ryg-coachingAdd 1-2 sentences of relationship acknowledgment before your ask.div
+          div
+        div
+      div
+      div class=card fade
+        div class=card-icon icon-redi class=fas fa-chessidiv
+        h3Competitive Intelligence Layerh3
+        pScans all buyer communications for competitor signals — mentioned, implied, or hidden. Infers threat level (evaluating, preferred, previously used) and prescribes battlecard-driven counter-messaging in real time.p
+        div style=margin-top1rem
+          div class=ryg-demo
+            div style=font-size0.7rem;colorvar(--gray);margin-bottom0.75remCOMPETITIVE SIGNALdiv
+            div class=ryg-rule red-ruleProspect mentioned Acme Corp twice. Not captured in CRM. Acme positions on price. You have not raised total cost of ownership advantage.div
+            div class=ryg-coachingSuggested Many customers tell us Acme looks cheaper upfront. Our audit typically finds...div
+          div
+        div
+      div
+    div
+
+    !-- CHANNEL COVERAGE --
+    div style=margin-top4rem
+      h3 style=font-family'DM Serif Display',serif;font-size1.5rem;margin-bottom1.5remEvery Channel. One Intelligence Layer.h3
+      div class=grid-4
+        div class=card fade style=text-aligncenter
+          div style=font-size1.8rem;colorvar(--sky);margin-bottom0.75remi class=fas fa-envelopeidiv
+          h3 style=font-size0.95remEmail Threadsh3
+          pFull thread history informs RYG scoring. Relationship drift tracked over time.p
+        div
+        div class=card fade style=text-aligncenter
+          div style=font-size1.8rem;colorvar(--teal);margin-bottom0.75remi class=fas fa-videoidiv
+          h3 style=font-size0.95remVideo Callsh3
+          pReal-time behavioral analysis — facial, vocal, body language — decoded through cultural lens.p
+        div
+        div class=card fade style=text-aligncenter
+          div style=font-size1.8rem;colorvar(--gold);margin-bottom0.75remi class=fas fa-phoneidiv
+          h3 style=font-size0.95remCall Transcriptsh3
+          pIngest and analyze transcripts for intent signals, cultural misalignment, and competitive mentions.p
+        div
+        div class=card fade style=text-aligncenter
+          div style=font-size1.8rem;color#A06EE3;margin-bottom0.75remi class=fas fa-comment-dotsidiv
+          h3 style=font-size0.95remText & Messagingh3
+          pWhatsApp, Teams, Slack — any text channel ingested for training and live analysis.p
+        div
+      div
+    div
+
+    !-- RYG EMAIL INTELLIGENCE --
+    div style=margin-top4rem
+      h3 style=font-family'DM Serif Display',serif;font-size1.5rem;margin-bottom0.5remEmail Intelligence — Beyond Single-Message Scoringh3
+      p style=colorvar(--gray);margin-bottom1.5rem;font-size0.95remClearSignals doesn't just score the email you're about to send. It scores the relationship the email is part of — using the full thread history and every prior interaction with that contact.p
+      div class=grid-2
+        div class=ryg-demo fade
+          div style=font-size0.7rem;colorvar(--gray);margin-bottom0.75remVIETNAM · COMPOSITE SCORE · nguyen.minh@corp.vndiv
+          div class=ryg-bar
+            span class=ryg-pill ryg-yellowYELLOWspan
+            span class=ryg-labelComposite relationship scorespan
+          div
+          div style=font-size0.75rem;colorvar(--gray);margin0.75rem 0 0.4remCONTENT SCORE span style=color#2ECC71● GREENspandiv
+          div class=ryg-rule green-ruleEmail well-calibrated for Vietnamese professional normsdiv
+          div style=font-size0.75rem;colorvar(--gray);margin0.75rem 0 0.4remRELATIONSHIP SCORE span style=color#F39C12● YELLOWspandiv
+          div class=ryg-ruleResponse time increased 40% over last 8 weeksdiv
+          div class=ryg-rulePersonal warmth markers declining since Nov 12div
+          div class=ryg-coachingIn Vietnamese business culture, this pattern signals a possible unaddressed concern. Send a relationship-first message before your next business request.div
+        div
+        div class=card fade
+          h3 style=margin-bottom1remThree Scoring Dimensionsh3
+          div style=margin-bottom1.25rem
+            div style=font-size0.75rem;colorvar(--sky);text-transformuppercase;letter-spacing0.1em;font-weight600;margin-bottom0.4remContent Score (40%)div
+            p style=font-size0.85rem;colorvar(--gray)Does this email violate the cultural norms of the recipient's country Language, structure, salutation, tone, CTA style — all evaluated against TrueCulture AI's country profile.p
+          div
+          div style=margin-bottom1.25rem
+            div style=font-size0.75rem;colorvar(--yellow);text-transformuppercase;letter-spacing0.1em;font-weight600;margin-bottom0.4remRelationship Score (35%)div
+            p style=font-size0.85rem;colorvar(--gray)Has this specific relationship drifted from its established baseline Response time, formality shifts, warmth decline — measured and interpreted through a cultural lens.p
+          div
+          div
+            div style=font-size0.75rem;colorvar(--green);text-transformuppercase;letter-spacing0.1em;font-weight600;margin-bottom0.4remTrajectory Score (25%)div
+            p style=font-size0.85rem;colorvar(--gray)Is this relationship trending stronger or weaker over the last 306090 days Catches what single-message analysis always misses.p
+          div
+        div
+      div
+    div
+
+    !-- CONTENT GENERATION --
+    div style=margin-top4rem
+      h3 style=font-family'DM Serif Display',serif;font-size1.5rem;margin-bottom0.5remDual-Version Content Creation™ span style=font-size0.7rem;colorvar(--teal);font-family'DM Sans',sans-serif;font-weight600;letter-spacing0.08em;text-transformuppercase;vertical-alignmiddle;margin-left0.5remPatent Pendingspanh3
+      p style=colorvar(--gray);margin-bottom1.5rem;font-size0.95remWhen ClearSignals AI™ helps create or improve a communication, it always produces two versions — anchored in your Creator Personality Profile™ (CPP™) — so you see both how close you can stay to your intent and the culturally optimized alternative.p
+      div class=grid-2
+        div class=card fade
+          div class=badge badge-blue style=margin-bottom1remVersion A — Your Voice, Calibrateddiv
+          p style=font-size0.88rem;colorvar(--gray)Minimal changes from your draft. Only the signals that register as Red or Yellow are addressed. Your grammatical fingerprint — sentence rhythm, vocabulary, even your characteristic use of punctuation — is preserved. If you use ... to signal a conversational pause, ClearSignals flags it for the cultural context but reflects your actual style rather than correcting it away.p
+        div
+        div class=card fade
+          div class=badge badge-teal style=margin-bottom1remVersion B — Fully Optimizeddiv
+          p style=font-size0.88rem;colorvar(--gray)Completely rewritten for cultural calibration. Every signal addressed. Tone, structure, salutation, CTA, and relationship framing all adjusted to the recipient's cultural profile. Still sounds like your organization — not a template — because it is built on your CPP.p
+        div
+      div
+    div
+  div
+section
+
+!-- TRUECULTURE AI --
+section id=trueculture
+  div class=container fade
+    p class=section-tagThe Intelligence Enginep
+    h2 class=section-titlePowered by TrueCulture AIh2
+    p class=section-subThe Cultural Signal Library is not a database of etiquette tips. It is powered by TrueCulture AI — a proprietary cultural intelligence infrastructure platform that covers 50+ countries across two purpose-built APIs and four intelligence layers.p
+    div class=dividerdiv
+
+    div class=hl-teal style=margin-top2.5rem
+      p style=font-size0.95rem;line-height1.8strong style=color#4ECDC4TrueCulture AI is infrastructure, not an application.strong ClearSignals AI is one customer of the TrueCulture Professional API. The same platform powers TrueConnect (dating), LifeStages (family and faith apps), AppLaunch Pro (App Store optimization), and any third-party developer building a culturally aware product. The database is built once. Every integration validates and enriches it. This is the Twilio model applied to cultural intelligence.p
+    div
+
+    !-- DUAL API --
+    div style=margin-top3rem
+      h3 style=font-family'DM Serif Display',serif;font-size1.4rem;margin-bottom1remDual API Architectureh3
+      div class=tc-api-grid
+        div class=tc-api-col
+          div class=tc-api-header pro-colori class=fas fa-briefcase style=margin-right0.5remiProfessional API — What ClearSignals Usesdiv
+          div class=tc-dim
+            div class=tc-dim-nameDirectness · Vietnamdiv
+            div class=tc-dim-textFrame business requests with relationship context before the ask. Indirect refusals (we will consider it) mean no. Do not push for a decision in the same meeting.div
+          div
+          div class=tc-dim
+            div class=tc-dim-nameSilence · Japandiv
+            div class=tc-dim-textSilence in negotiation is contemplation, not rejection. Do not fill it. Whoever speaks first concedes ground.div
+          div
+          div class=tc-dim
+            div class=tc-dim-nameFormality Drift · Germanydiv
+            div class=tc-dim-textA German contact who switches from Sie to du signals genuine trust. The reverse is a warning signal that should trigger a relationship review.div
+          div
+        div
+        div class=tc-api-col
+          div class=tc-api-header pers-colori class=fas fa-heart style=margin-right0.5remiPersonal API — TrueConnect &amp; LifeStagesdiv
+          div class=tc-dim
+            div class=tc-dim-nameDirectness · Vietnamdiv
+            div class=tc-dim-textExpress romantic interest gradually and indirectly. Direct declarations of feelings are uncomfortable early in a relationship. Watch for small acts of sustained attention rather than explicit statements.div
+          div
+          div class=tc-dim
+            div class=tc-dim-nameSilence · Japandiv
+            div class=tc-dim-textComfortable silence signals trust, not boredom. The relationship is deepening when silence stops being awkward. Filling it signals anxiety, not interest.div
+          div
+          div class=tc-dim
+            div class=tc-dim-nameGift giving · Chinadiv
+            div class=tc-dim-textSmall, recurring gifts signal sustained interest more than one large gesture. Extravagant gifts early create obligation, not warmth.div
+          div
+        div
+      div
+      p style=font-size0.8rem;colorvar(--gray);margin-top1rem;text-aligncenterSame cultural truth. Same database. Two APIs. Two completely different commercially valuable applications.p
+    div
+
+    !-- FOUR LAYERS --
+    div style=margin-top3rem
+      h3 style=font-family'DM Serif Display',serif;font-size1.4rem;margin-bottom1.5remFour Intelligence Layers — Built Once, Queried at Speedh3
+      div class=grid-2
+        div class=card fade
+          div class=card-icon icon-bluei class=fas fa-layer-groupidiv
+          h3Layer 1 — Cultural Foundationh3
+          p8 cultural dimensions (directness, trust architecture, hierarchy, time orientation, persuasion logic, conflict style, identity frame, decision pace) with dual professional and personal interpretations. Anchored by Hofstede scores. Three-tier inheritance EastWest → Regional → Country.p
+        div
+        div class=card fade
+          div class=card-icon icon-teali class=fas fa-commentsidiv
+          h3Layer 2 — Contextual Intelligenceh3
+          pDigital communication norms (email tone, preferred channels, response expectations, marketing copy style, visual preferences, CTA patterns) and offline behavioral intelligence (greetings, meetings, negotiations, dining, gift-giving, relationship building).p
+        div
+        div class=card fade
+          div class=card-icon icon-goldi class=fas fa-traffic-lightidiv
+          h3Layer 3 — Scoring Rulesh3
+          pMachine-readable rules stored in vector DB for sub-500ms retrieval. Three rule sets per country email scoring rules (detectable text signals → RYG severity), video behavioral rules (facial, vocal, body language, silence, gaze), and relationship drift rules (measurable behavioral change over time).p
+        div
+        div class=card fade
+          div class=card-icon icon-purpi class=fas fa-chart-lineidiv
+          h3Layer 4 — Relationship Intelligenceh3
+          pPer-contact behavioral baselines (response time, formality score, warmth score, initiation ratio) with culturally calibrated drift thresholds. A 40% response time increase means something different from a Japanese CFO than a Brazilian sales director. The thresholds know this.p
+        div
+      div
+    div
+  div
+section
+
+!-- ARCHITECTURE --
+section id=architecture
+  div class=container fade style=backgroundvar(--navy2);border-radius16px;padding4rem
+    p class=section-tagTechnical Architecturep
+    h2 class=section-titleVector DB + CPP™ + Privacy-Firsth2
+    p class=section-subNot a JSON file lookup. A semantically-aware, privacy-first intelligence architecture built for enterprise scale and real-time response.p
+    div class=dividerdiv
+    div class=grid-2 style=margin-top2.5rem;align-itemsstart
+      div
+        div class=arch-block
+CLEARSIGNALS AI — SIGNAL FLOW
+
+EMAIL  VIDEO  CALL  TEXT
+          ↓
+  LOCAL PROCESSING LAYER
+  (PII never leaves device)
+  Grammatical fingerprinting
+  Signal extraction
+          ↓
+  CPP ENGINE (vector DB)
+  Communication Personality
+  Profile — your voice,
+  your patterns, your style
+          ↓
+  TRUECULTURE AI (Prof API)
+  Vector DB query
+  country + signal + dimension
+  → scoring rules retrieved
+  → cultural interpretation
+  → RYG score + coaching
+          ↓
+  INTENT DECODER
+  Buyer readiness scoring
+  Trajectory analysis
+          ↓
+  COMPETITIVE LAYER
+  Entity recognition
+  Threat level inference
+  Battlecard prescription
+          ↓
+  OUTPUT
+  Email RYG score + mitigation
+  Video Real-time coaching overlay
+  CRM Auto-updated fields
+  Content Dual-version generation
+        div
+      div
+      div
+        div class=grid-3 style=gap1rem;margin-bottom1.5rem
+          div class=fin-card
+            div class=yrResponse Timediv
+            div class=big style=font-size1.6rem&lt;500msdiv
+            div class=noteVector DB retrieval for scoring rulesdiv
+          div
+          div class=fin-card
+            div class=yrCountriesdiv
+            div class=big style=font-size1.6rem50+div
+            div class=noteTrueCulture AI coverage, growingdiv
+          div
+          div class=fin-card
+            div class=yrChannelsdiv
+            div class=big style=font-size1.6rem4+div
+            div class=noteEmail, video, calls, textdiv
+          div
+        div
+        div class=moat-item
+          h4Creator Personality Profile™ (CPP™) span style=font-size0.65rem;colorvar(--teal);font-weight600;letter-spacing0.08em;text-transformuppercase;margin-left0.4remPatent Pendingspanh4
+          pEvery user's communication identity — vocabulary, sentence structure, grammatical fingerprint, channel preferences, response patterns — embedded as vectors. Generated content sounds like them, not like a template. Grammatical quirks (like using ... as a conversational pause) are flagged culturally but preserved as style markers via Grammatical Fingerprinting™.p
+        div
+        div class=moat-item
+          h4Privacy-First Architecture span style=font-size0.65rem;colorvar(--teal);font-weight600;letter-spacing0.08em;text-transformuppercase;margin-left0.4remPatent Pendingspanh4
+          pRaw communication data never leaves the device. Local processing extracts anonymized signals via irreversible PII transformation. Only the signal — not the content — is sent to the cloud. Architecturally compliant with GDPR, CCPA, and emerging global privacy frameworks before regulations force competitors to rebuild.p
+        div
+        div class=moat-item
+          h4Voice Agent Layer (Roadmap)h4
+          pAI voice agents imbued with the organization's actual CPP — speaking, responding, and engaging the way your best people do. Not a generic chatbot voice. A culturally calibrated representative of your organization's identity.p
+        div
+      div
+    div
+  div
+section
+
+!-- COMPETITIVE --
+section id=competitive
+  div class=container fade
+    p class=section-tagCompetitive Landscapep
+    h2 class=section-titleNobody Does This.h2
+    p class=section-subGong proved conversation intelligence is a billion-dollar market by analyzing calls. The written channel — where more relationship management actually happens — remains almost entirely unanalyzed. ClearSignals owns that gap.p
+    div class=dividerdiv
+    div style=overflow-xauto;margin-top2.5rem
+      table class=comp-table
+        thead
+          tr
+            thCapabilityth
+            thGongth
+            thKlueth
+            thChorusth
+            thTranslation Toolsth
+            thClearSignals AIth
+          tr
+        thead
+        tbody
+          trtdCall transcript analysistdtd class=check✓tdtd class=cross✗tdtd class=check✓tdtd class=cross✗tdtd class=check✓tdtr
+          trtdEmail thread intelligencetdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=check✓tdtr
+          trtdVideo behavioral analysistdtd class=partial◐tdtd class=cross✗tdtd class=partial◐tdtd class=cross✗tdtd class=check✓tdtr
+          trtdCultural signal decodingtdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=partial◐tdtd class=check✓tdtr
+          trtdRYG email scoringtdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=check✓tdtr
+          trtdRelationship drift trackingtdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=check✓tdtr
+          trtdCompetitive intelligencetdtd class=partial◐tdtd class=check✓tdtd class=partial◐tdtd class=cross✗tdtd class=check✓tdtr
+          trtdCreator Personality Profile™ (CPP™)tdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=check✓tdtr
+          trtdDual-Version Content Creation™tdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=check✓tdtr
+          trtdPrivacy-first local processingtdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=check✓tdtr
+          tr class=highlighttdstrongTrueCulture AI infrastructurestrongtdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=cross✗tdtd class=check style=colorvar(--gold2)✓ Proprietarytdtr
+        tbody
+      table
+    div
+    p style=font-size0.8rem;colorvar(--gray);margin-top1rem◐ = Partial capability without cultural intelligence layerp
+    div class=hl-gold style=margin-top2rem
+      p style=font-size0.95remstrong style=colorvar(--gold2)The positionstrong You already pay for Gong and Klue. They show you what was said. ClearSignals shows you what was meant — and what to do about it, in any culture, on any channel.p
+    div
+  div
+section
+
+!-- MOAT --
+section style=padding5rem 2rem;backgroundvar(--navy2)
+  div class=container fade
+    p class=section-tagCompetitive Moatp
+    h2 class=section-titleFour Moats.brOne Widening.h2
+    div class=dividerdiv
+    div style=margin-top2.5rem
+      div class=moat-item fade
+        h4TrueCulture AI — 25 Years of IP Nobody Can Replicateh4
+        pThe cultural intelligence engine is built on 25 years of pattern recognition across 100+ countries and close to $50B in influenced revenue. A competitor can build a research database. They cannot replicate that. Every founder override — where lived experience corrects research — becomes a proprietary data point that widens the gap.p
+      div
+      div class=moat-item fade
+        h4Creator Personality Profile™ (CPP™) — The Data Flywheelh4
+        pEvery user interaction trains the CPP™. The longer someone uses ClearSignals AI™, the more precisely it reflects their voice. Switching cost grows with every communication. The profile is not exportable — it lives in the ClearSignals intelligence layer.p
+      div
+      div class=moat-item fade
+        h4Relationship Timeline Intelligence — No One Else Has the Historyh4
+        pThe composite RYG score uses months of interaction history per contact. A competitor starting today has no relationship timelines. The moat is not the algorithm — it's the longitudinal data on how this specific relationship has evolved, interpreted through a cultural lens.p
+      div
+      div class=moat-item fade
+        h4Privacy Architecture — Regulatory Tailwind, Not Headwindh4
+        pLocal-first processing is architecturally ahead of tightening GDPR, CCPA, and global privacy regulation. Gong, Chorus, and most competitors process data in the cloud. When regulators tighten — and they will — ClearSignals is already compliant by design while competitors rebuild.p
+      div
+    div
+  div
+section
+
+!-- PILOT RESULTS --
+section style=padding5rem 2rem
+  div class=container fade
+    p class=section-tagProofp
+    h2 class=section-titleThe Model Is Proven.h2
+    p class=section-sub6-month pilot with a $200M B2B SaaS company. 20 SDRs and AEs. Intent Decoder + Cultural Signal Library modules.p
+    div class=dividerdiv
+    div class=grid-4 style=margin-top2.5rem
+      div class=fin-card fade
+        div class=yrLead Qualitydiv
+        div class=big30%div
+        div class=notereduction in misclassified leadsdiv
+      div
+      div class=fin-card fade
+        div class=yrConversiondiv
+        div class=big15%div
+        div class=noteimprovement in meeting-to-close ratediv
+      div
+      div class=fin-card fade
+        div class=yrPipeline Recoverydiv
+        div class=big$1.2Mdiv
+        div class=noteannualized pipeline recovereddiv
+      div
+      div class=fin-card fade
+        div class=yrHidden Competitive Signalsdiv
+        div class=big42%div
+        div class=noteof lost deals had competitor signals misseddiv
+      div
+    div
+    div class=hl-teal style=margin-top2.5rem
+      p style=font-size0.95remstrong style=color#4ECDC4Competitive module (retrospective)strong 500 anonymized transcripts revealed $800K–$1.2M in additional recoverable revenue had ClearSignals been live. The competitive detection module was not yet deployed during the pilot — this is incremental upside.p
+    div
+  div
+section
+
+!-- FINANCIALS --
+section id=financials
+  div class=container fade
+    p class=section-tagFinancialsp
+    h2 class=section-title$10M ARR by Year 3.h2
+    div class=dividerdiv
+    div class=grid-3 style=margin-top2.5rem
+      div class=fin-card fade
+        div class=yrYear 1 ARRdiv
+        div class=big$1Mdiv
+        div class=note10 enterprise design partners · Pilot → paid conversiondiv
+      div
+      div class=fin-card fade
+        div class=yrYear 2 ARRdiv
+        div class=big$4Mdiv
+        div class=noteDeveloper API program live · TrueCulture integrations scalingdiv
+      div
+      div class=fin-card fade
+        div class=yrYear 3 ARRdiv
+        div class=big$10Mdiv
+        div class=noteCategory leadership · Voice agent module · 50+ country coveragediv
+      div
+    div
+    div style=margin-top3rem
+      h3 style=font-family'DM Serif Display',serif;font-size1.4rem;margin-bottom1.5remUse of $3.5Mh3
+      div class=use-bar fadediv class=use-bar-labelEngineering (10 → 25)divdiv class=use-bar-trackdiv class=use-bar-fill style=width51%divdivdiv class=use-bar-val$1.8Mdivdiv
+      div class=use-bar fadediv class=use-bar-labelGTM (sales + marketing)divdiv class=use-bar-trackdiv class=use-bar-fill style=width34%divdivdiv class=use-bar-val$1.2Mdivdiv
+      div class=use-bar fadediv class=use-bar-labelTrueCulture expansiondivdiv class=use-bar-trackdiv class=use-bar-fill style=width9%divdivdiv class=use-bar-val$0.3Mdivdiv
+      div class=use-bar fadediv class=use-bar-labelCompetitive moduledivdiv class=use-bar-trackdiv class=use-bar-fill style=width6%divdivdiv class=use-bar-val$0.2Mdivdiv
+    div
+  div
+section
+
+!-- ROADMAP --
+section style=padding5rem 2rem;backgroundvar(--navy2)
+  div class=container fade
+    p class=section-tagRoadmapp
+    h2 class=section-titlePhased to Market.h2
+    div class=dividerdiv
+    div style=margin-top2.5rem;max-width700px
+      div class=roadmap-item fade
+        div class=roadmap-dotdiv
+        div
+          div class=roadmap-phaseNow — Q2 2026div
+          h4Platform Foundationh4
+          pEmail RYG scoring live. TrueCulture Professional API integrated. CPP engine v1. CRM integrations (Salesforce, HubSpot). 10 enterprise design partners onboarded.p
+        div
+      div
+      div class=roadmap-item fade
+        div class=roadmap-dot style=backgroundvar(--sky)div
+        div
+          div class=roadmap-phaseQ3 2026div
+          h4Video Intelligence + Relationship Drifth4
+          pLive video call coaching overlay. Relationship drift intelligence out of beta. Multimodal behavioral analysis (facial, vocal, body language). 30-country TrueCulture coverage.p
+        div
+      div
+      div class=roadmap-item fade
+        div class=roadmap-dot style=backgroundvar(--gold)div
+        div
+          div class=roadmap-phaseQ4 2026div
+          h4Competitive Module + Developer APIh4
+          pCompetitive intelligence layer fully deployed. TrueCulture Professional API opened to third-party developers. Dual-version content generation with voice agent prototype.p
+        div
+      div
+      div class=roadmap-item fade
+        div class=roadmap-dot style=background#A06EE3div
+        div
+          div class=roadmap-phase2027div
+          h4Voice Agents + Platform Scaleh4
+          pAI voice agents imbued with organizational CPP. TrueCulture Personal API live for partner applications. 50+ country coverage. Data flywheel active — usage improves profiles.p
+        div
+      div
+    div
+  div
+section
+
+!-- TEAM --
+section style=padding5rem 2rem
+  div class=container fade
+    p class=section-tagThe Teamp
+    h2 class=section-titleThis Problem Is Personal.h2
+    p class=section-subThe founder did not find this problem in a market research report. He lived it — for 25 years, across 100+ countries, in deals worth billions of dollars.p
+    div class=dividerdiv
+    div class=grid-2 style=margin-top2.5rem
+      div class=team-card fade style=border-colorrgba(201,168,76,0.3)
+        h3Steve Winfieldh3
+        div class=roleFounder & CEOdiv
+        p25 years of commercial pattern recognition across 100+ countries and close to $50B in influenced revenue at an average quota attainment of 116%. 11 years at Microsoft managing worldwide partner relationships. Prior Cybereason, Kroll, Trustifi — consistently 108-166% quota attainment. Began career as a Texas public school teacher, coach, and principal — the Educator's Advantage that makes cultural intelligence teachable and scalable, not just experiential. TrueCulture AI is the codification of that career.p
+      div
+      div style=displayflex;flex-directioncolumn;gap1rem
+        div class=team-card fade
+          h3CTO (Hiring)h3
+          div class=roleComputational Linguistics  AIdiv
+          pPhD in Computational Linguistics. Experience in dialogue systems and multimodal AI. Named entity recognition for competitive signal detection.p
+        div
+        div class=team-card fade
+          h3Head of Sales (Hiring)h3
+          div class=roleEnterprise Revenuediv
+          p15+ years enterprise sales. Deep familiarity with the problem from the buyer's side — former Gong power user who knows what the tool misses.p
+        div
+      div
+    div
+  div
+section
+
+!-- IP PORTFOLIO --
+section id=ip style=padding5rem 2rem;backgroundvar(--navy2)
+  div class=container fade
+    p class=section-tagIntellectual Propertyp
+    h2 class=section-titleProtected FrombrDay One.h2
+    p class=section-subClearSignals AI™ is protected by a portfolio of patent-pending processes and trademark-protected brand assets that competitors cannot replicate.p
+    div class=dividerdiv
+    div class=grid-2 style=margin-top2.5rem
+      div class=card fade
+        div class=card-icon icon-bluei class=fas fa-file-contractidiv
+        h3Patent-Pending Processesh3
+        div style=margin-top1rem;displayflex;flex-directioncolumn;gap0.75rem
+          div style=displayflex;align-itemsflex-start;gap0.75rem;font-size0.87rem
+            span style=colorvar(--teal);flex-shrink0;margin-top0.1remi class=fas fa-circle style=font-size0.5remispan
+            spanstrongLocal-to-cloud privacy architecturestrong with irreversible PII transformationspan
+          div
+          div style=displayflex;align-itemsflex-start;gap0.75rem;font-size0.87rem
+            span style=colorvar(--teal);flex-shrink0;margin-top0.1remi class=fas fa-circle style=font-size0.5remispan
+            spanstrongProfile-divergent dual content generationstrong from a single communication identityspan
+          div
+          div style=displayflex;align-itemsflex-start;gap0.75rem;font-size0.87rem
+            span style=colorvar(--teal);flex-shrink0;margin-top0.1remi class=fas fa-circle style=font-size0.5remispan
+            spanstrongStylistic pattern replicationstrong from unfiltered multi-channel communication analysisspan
+          div
+          div style=displayflex;align-itemsflex-start;gap0.75rem;font-size0.87rem
+            span style=colorvar(--teal);flex-shrink0;margin-top0.1remi class=fas fa-circle style=font-size0.5remispan
+            spanstrongCRM-to-communication trajectory correlationstrong and predictive outcome scoring methodologyspan
+          div
+        div
+      div
+      div class=card fade
+        div class=card-icon icon-goldi class=fas fa-trademarkidiv
+        h3Trademark-Protected Brandsh3
+        div style=margin-top1rem;displayflex;flex-directioncolumn;gap0.75rem
+          div style=displayflex;align-itemscenter;gap0.75rem;font-size0.87rem
+            span style=colorvar(--gold2);flex-shrink0i class=fas fa-trademark style=font-size0.7remispan
+            spanClearSignals AI™span
+          div
+          div style=displayflex;align-itemscenter;gap0.75rem;font-size0.87rem
+            span style=colorvar(--gold2);flex-shrink0i class=fas fa-trademark style=font-size0.7remispan
+            spanCreator Personality Profile™ &amp; CPP™span
+          div
+          div style=displayflex;align-itemscenter;gap0.75rem;font-size0.87rem
+            span style=colorvar(--gold2);flex-shrink0i class=fas fa-trademark style=font-size0.7remispan
+            spanGrammatical Fingerprinting™span
+          div
+          div style=displayflex;align-itemscenter;gap0.75rem;font-size0.87rem
+            span style=colorvar(--gold2);flex-shrink0i class=fas fa-trademark style=font-size0.7remispan
+            spanCommunication Trajectory Mapping™span
+          div
+          div style=displayflex;align-itemscenter;gap0.75rem;font-size0.87rem
+            span style=colorvar(--gold2);flex-shrink0i class=fas fa-trademark style=font-size0.7remispan
+            spanDual-Version Content Creation™span
+          div
+          div style=displayflex;align-itemscenter;gap0.75rem;font-size0.87rem
+            span style=colorvar(--gold2);flex-shrink0i class=fas fa-trademark style=font-size0.7remispan
+            spanFormality Spectrum™span
+          div
+        div
+      div
+    div
+    div class=hl-teal style=margin-top2rem
+      p style=font-size0.95remstrong style=color#4ECDC4IP &amp; Technology Moatstrong 4 patent-pending processes, 6 trademark-protected brands, privacy-first architecture as regulatory hedge. Competitors can build similar features. They cannot use these names, these methods, or this architecture — and they cannot replicate 25 years of founder IP baked into TrueCulture AI.p
+    div
+  div
+section
+
+!-- INVESTMENT --
+section id=investment
+  div class=container fade
+    p class=section-tagThe Askp
+    h2 class=section-titleJoin the Seed Round.h2
+    div class=dividerdiv
+    div class=ask-box style=margin-top2.5rem
+      p style=font-size0.8rem;letter-spacing0.15em;text-transformuppercase;colorvar(--gray)Seed Roundp
+      div class=ask-amount$3.5Mdiv
+      p style=colorvar(--gray);max-width500px;margin0 auto 2rem18-month runway to $1M ARR, 10 enterprise customers, and category leadership in communication intelligence.p
+      div class=grid-3 style=gap1rem;max-width700px;margin0 auto
+        div class=fin-card
+          div class=yrStructurediv
+          div class=big style=font-size1.4remSAFEdiv
+          div class=noteStandard termsdiv
+        div
+        div class=fin-card
+          div class=yrRunwaydiv
+          div class=big style=font-size1.4rem18modiv
+          div class=noteTo $1M ARR milestonediv
+        div
+        div class=fin-card
+          div class=yrYear 3 Targetdiv
+          div class=big style=font-size1.4rem$10Mdiv
+          div class=noteARR projectiondiv
+        div
+      div
+      div style=margin-top2.5rem
+        a href=mailtoinvest@clearsignalsai.com class=btn btn-goldRequest Investor Packagea
+        a href=mailtoinvest@clearsignalsai.com class=btn btn-outlineSchedule a Calla
+      div
+    div
+    div class=pull-quote style=margin-top3rem
+      Every day, sales teams lose revenue because they cannot hear what buyers are really saying — or detect the competitor hiding in plain sight. ClearSignals AI prevents that miscommunication before it costs a deal. Hidden intent, cultural subtext, competitive signals — decoded in real time. The model is proven. The market is validated. The moat is built on 25 years of IP no competitor can replicate.
+    div
+  div
+section
+
+!-- FOOTER --
+footer
+  div class=brandClearSignals AI™div
+  p style=margin-bottom0.5reminvest@clearsignalsai.com · clearsignalsai.comp
+  p style=font-size0.75rem;colorrgba(138,155,173,0.6)Confidential — for qualified investors only · February 2026p
+footer
+
+script
+   Fade in on scroll
+  const observer = new IntersectionObserver(entries = {
+    entries.forEach(e = { if(e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold 0.1 });
+  document.querySelectorAll('.fade').forEach(el = observer.observe(el));
+script
+body
+html
