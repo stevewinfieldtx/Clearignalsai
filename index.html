@@ -1091,4 +1091,15 @@ EMAIL / VIDEO / CALL / TEXT
 <footer>
   <div class="brand">ClearSignals AI™</div>
   <p style="margin-bottom:0.5rem"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a4cdcad2c1d7d0e4c7c8c1c5d6d7cdc3cac5c8d7c5cd8ac7cbc9">[email&#160;protected]</a> · clearsignalsai.com</p>
-  <p style="font-size:0.75rem;color:rgba(138,155,173,0.6)">Confidential — for qualified investo
+  <p style="font-size:0.75rem;color:rgba(138,155,173,0.6)">Confidential — for qualified investors only. © 2026 ClearSignals AI™. All rights reserved.</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
